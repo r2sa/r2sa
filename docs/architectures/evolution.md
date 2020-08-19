@@ -46,16 +46,14 @@
 	- 路由转发
 	- 服务治理
 - 开源网关组件
-	(
-		|对比维度|Zuul(推荐)|Spring Clound Geteway|Nginx|Kong|Tyk|Node.js|
-		|---|---|---|---|---|---|---|
-		|编程语言|Java|Java|C|C + lua|Go|js|
-		|成熟度|高|低|高|高|高|高|
-		|使用成本|低|较低|高|较低|较低|较低|
-		|IO模型|BIO|Netty(NIO)|epoll|epoll|AIO|AIO|
-		|技术生态|Netflix|Spring Cloud|Nginx社区|OpenRestry|Go社区|Node.js社区|
-		|适用场景|网关|网关|负载均衡|网关|网关|网关|
-	)
+|对比维度|Zuul(推荐)|Spring Clound Geteway|Nginx|Kong|Tyk|Node.js|
+|---|---|---|---|---|---|---|
+|编程语言|Java|Java|C|C + lua|Go|js|
+|成熟度|高|低|高|高|高|高|
+|使用成本|低|较低|高|较低|较低|较低|
+|IO模型|BIO|Netty(NIO)|epoll|epoll|AIO|AIO|
+|技术生态|Netflix|Spring Cloud|Nginx社区|OpenRestry|Go社区|Node.js社区|
+|适用场景|网关|网关|负载均衡|网关|网关|网关|
 
 #### php如何实现
 - 水平分层强调的是物理上的分层，与MVC并不同
