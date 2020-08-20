@@ -134,6 +134,16 @@ SOA架构是单体架构垂直拆分的结果
 - 数据一致性层面
 	- 最终一致性
 
+### 转转微服务架构
+![转转微服务架构1.0](architectures/zzmicro1.jpg)
+
+### Service Mesh
+- 是什么
+	- 服务网格是个*基础设施层*，用于处理服务间通信
+	- 云原生应用有着复杂的服务拓扑，服务网格复杂在这些拓扑中*实现请求的可靠传递*
+	- 服务网格通常实现为一组*轻量级网络代理*应用程序部署在一起，*对应用程序透明*
+- @todo
+
 ## 参考资料
 - [知乎:什么是微服务架构](https://www.zhihu.com/question/65502802)
-- 孙玄:微服务架构在二手交易平台（转转）中的实践
+- [转转公司微服务架构演进之路](https://www.slidestalk.com/u3502/Evolution_of_Microsoft_Service_Architecture_for_Transfer_Compani)
