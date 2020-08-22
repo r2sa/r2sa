@@ -135,7 +135,7 @@ SOA架构是单体架构垂直拆分的结果
 	- 最终一致性
 
 ### 转转微服务架构
-![转转微服务架构1.0](architectures/zzmicro1.jpg)
+![转转微服务架构1.0](/architectures/zzmicro1.jpg)
 
 ### Service Mesh
 - 是什么
