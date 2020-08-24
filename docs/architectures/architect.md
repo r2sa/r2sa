@@ -35,7 +35,7 @@
    <col width="246.60" style='mso-width-source:userset;mso-width-alt:10521;'/>
    <tr height="20.40" style='height:20.40pt;'>
     <td class="xl65" height="20.40" width="66.65" style='height:20.40pt;width:66.65pt;' x:str>考虑方面</td>
-    <td class="xl66" width="444.90" colspan="2" style='width:444.90pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>详细内容</td>
+    <td class="xl66" width="444.90" colspan="2" style='width:444.90pt;border-right:.5pt windowtext;border-bottom:.5pt windowtext;' x:str>详细内容</td>
    </tr>
    <tr height="17.60" style='height:17.60pt;'>
     <td class="xl68" height="17.60" style='height:17.60pt;' x:str>选型评估</td>
@@ -43,7 +43,7 @@
     <td class="xl69"></td>
    </tr>
    <tr height="17.60" style='height:17.60pt;'>
-    <td class="xl70" height="52.80" rowspan="3" style='height:52.80pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>程序设计</td>
+    <td class="xl70" height="52.80" rowspan="3" style='height:52.80pt;border-right:.5pt windowtext;border-bottom:.5pt windowtext;' x:str>程序设计</td>
     <td class="xl69" x:str>逻辑</td>
     <td class="xl69" x:str>流程、分支</td>
    </tr>
@@ -66,7 +66,7 @@
     <td class="xl69"></td>
    </tr>
    <tr height="17.60" style='height:17.60pt;'>
-    <td class="xl70" height="35.20" rowspan="2" style='height:35.20pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>维护运维</td>
+    <td class="xl70" height="35.20" rowspan="2" style='height:35.20pt;border-right:.5pt windowtext;border-bottom:.5pt windowtext;' x:str>维护运维</td>
     <td class="xl69" x:str>维护</td>
     <td class="xl69" x:str>易读、易理解、易修改</td>
    </tr>
@@ -75,7 +75,7 @@
     <td class="xl69" x:str>监控、日志、配置、变更、兼容</td>
    </tr>
    <tr height="17.60" style='height:17.60pt;'>
-    <td class="xl70" height="35.20" rowspan="2" style='height:35.20pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>集成部署</td>
+    <td class="xl70" height="35.20" rowspan="2" style='height:35.20pt;border-right:.5pt windowtext;border-bottom:.5pt windowtext;' x:str>集成部署</td>
     <td class="xl69" x:str>提供库</td>
     <td class="xl69" x:str>依赖复杂度、便利性、易用性、升级管理</td>
    </tr>
