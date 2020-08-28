@@ -229,6 +229,8 @@
 		- ClientA 拿锁成功，ClientB 拿锁失败
 		- ClientA需要对etcd保持后台心跳线程
 			- 比如key的租期是10ms，后台心跳线程为3ms，心跳线程负责在拿到key之后每3ms cas唯一凭证uuid
+- 申请锁
+	- 
 
 ## 分布式事务设计
 
