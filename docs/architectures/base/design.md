@@ -230,7 +230,49 @@
 		- ClientA需要对etcd保持后台心跳线程
 			- 比如key的租期是10ms，后台心跳线程为3ms，心跳线程负责在拿到key之后每3ms cas唯一凭证uuid
 - 申请锁
-	- 
+	- 业务方申请资源锁，调用时提供key.ttl
+	- etcd生成uuid，作为当前锁的唯一凭证，将(key,uuid,ttl)写etcd
+	- 检查etcd中此key是否存在，如没有，尝试写入key，写入失败，拿锁失败；写入成功拿到锁；若key已存在拿锁失败
+	- 拿锁后，心跳线程启动，心跳线程维持时间为ttl/3，compare and swap uuid，从而将key值续租
+	- 相关 etcd API
+		- 申请锁
+			- curl http://127.0.0.1:2379/v2/key/foo -XPUT -d value=bar -d ttl=5 prevExist=false
+		- CAS更新锁租期
+			- curl http://127.0.0.1:2379/v2/key/foo?prevValue=prev_uuid -XPUT -d ttl=5 -d refresh=true -d prevExist=true
+		- CAS删除锁
+			- curl http://127.0.0.1:2379/v2/key/foo?prevValue=prev_uuid -XDELETE
+- 锁的清理
+	- 如果调用方正常结束，通过cas接口调用delete方法自动清理etcd中的key值
+	- 如果调用方异常终止，等待原有锁ttl过期后，锁资源释放
+- more
+	- 业务接入
+	- 获取锁平均耗时监控
+	- etcd兼容性测试
+		- etcd提供了独有的集群管理模式，方便进行极端case下的测试，以三个节点的etcd集群为例
+			- 单节点停机，不影响持续写入，不影响读、结果有一致性
+			- 当只有一个节点时，读会停机，写入正常
+			- 理论上只要哦不是多节点同时停机，线上服务不会受影响
+	- etcd恢复/版本
+		- etcd有自有的数据恢复方式，如服务停机后，可以将所以数据转移重启
+		- etcd的增删节点、节点迁移等部署相关，均有相关操作方式
+		- etcd版本选择
+			- V3 提供gRPC接口
+			- V3 天然提供 分布式锁功能
+				- 只需申请锁、释放锁
+				- 不用关注锁的租期问题
+
+#### 分布式锁特殊场景
+- 分布式锁只是在同一自然时间的互斥锁，本身不解决幂等性问题
+	- 接入业务需要完善从获得锁 到释放锁中间的数据幂等逻辑
+- 锁没有按照预期续租
+	- 心跳续租没成功
+	- 马上启动GC，GC时间够长
+- etcd内部协调发生问题
+	- Leader节点挂了，选主中
+	- Raft日志数据同步发生错误或不一致问题
+ - 如何解决以上问题
+ 	- 分布式锁做高可用
+ 		- eg: 再做一套分布式锁
 
 ## 分布式事务设计
 
